@@ -114,7 +114,7 @@ export default function PersistentDrawerLeft() {
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+              <Avatar src="/broken-image.jpg" />
               </IconButton>
             </Tooltip>
             <Menu
