@@ -19,9 +19,7 @@ import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
 import Avatar from '@mui/material/Avatar';
 import MenuItem from '@mui/material/MenuItem';
-import Tooltip from '@mui/material/Tooltip';
 import Menu from '@mui/material/Menu';
-import ButtonG from './ButtonG';
 
 const drawerWidth = 240;
 
@@ -82,6 +80,7 @@ export default function PersistentDrawerLeft() {
     setOpen(false);
   };
 
+  /* 유저메뉴 상수+메서드 시작 */
   const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
   const [anchorElUser, setAnchorElUser] = React.useState(null);
@@ -93,6 +92,7 @@ export default function PersistentDrawerLeft() {
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
   };
+  /* 유저메뉴 상수+메서드 끝 */
 
   return (
     <Box sx={{ display: 'flex' }}>
@@ -111,12 +111,12 @@ export default function PersistentDrawerLeft() {
           <Typography variant="h6" noWrap component="div" sx={{ flexGrow: 1 }}>
             Bring Us
           </Typography>
+
+          {/*유저메뉴 시작*/}
           <Box sx={{ flexGrow: 0 }}>
-            <Tooltip title="Open settings">
-              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
-              </IconButton>
-            </Tooltip>
+            <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
+              <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+            </IconButton>
             <Menu
               sx={{ mt: '45px' }}
               id="menu-appbar"
@@ -140,6 +140,7 @@ export default function PersistentDrawerLeft() {
               ))}
             </Menu>
           </Box>
+          {/*유저메뉴 끝*/}
           
         </Toolbar>
       </AppBar>

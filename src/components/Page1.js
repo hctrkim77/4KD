@@ -75,7 +75,7 @@ export default function CursorPaginationGrid() {
         pageSize={5}
         rowsPerPageOptions={[5]}
         rowCount={100}
-        paginationMode="server"
+        /*paginationMode="server"*/
         onPageChange={handlePageChange}
         page={page}
         loading={loading}
