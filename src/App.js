@@ -7,10 +7,8 @@ import Drawer1 from './components/Drawer1';
 
 const theme = createTheme({
   palette : { 
-    primary: {
-      main: '#ffffff',
+      mode: 'dark',
     },
-      },
       });
 
 function App() {
