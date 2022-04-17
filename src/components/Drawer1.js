@@ -18,8 +18,11 @@ import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
 import Avatar from '@mui/material/Avatar';
+import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
+import {Link} from "react-router-dom";
+import logo3 from "../images/logo3.png";
 
 const drawerWidth = 240;
 
@@ -81,17 +84,22 @@ export default function PersistentDrawerLeft() {
   };
 
   /* 유저메뉴 상수+메서드 시작 */
-  const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+  /*const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];*/
 
-  const [anchorElUser, setAnchorElUser] = React.useState(null);
-  
+  /*const [anchorElUser, setAnchorElUser] = React.useState(null);*/
+
+  /*
   const handleOpenUserMenu = (event) => {
     setAnchorElUser(event.currentTarget);
   };
+  */
 
+/*
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
   };
+*/
+
   /* 유저메뉴 상수+메서드 끝 */
 
   return (
@@ -108,15 +116,20 @@ export default function PersistentDrawerLeft() {
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" noWrap component="div" sx={{ flexGrow: 1 }}>
-            Bring Us
-          </Typography>
+          <Box sx={{ flexGrow: 1 }}>
+          <Link to= "/">
+            <img src= { logo3 } />
+          </Link>
+          </Box>
 
           {/*유저메뉴 시작*/}
           <Box sx={{ flexGrow: 0 }}>
-            <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-              <Avatar src="/broken-image.jpg" />
-            </IconButton>
+            <Link to= "/auth">
+              <IconButton sx={{ p: 0 }}>
+                <Avatar src="/broken-image.jpg" />
+              </IconButton>
+            </Link>
+            {/*
             <Menu
               sx={{ mt: '45px' }}
               id="menu-appbar"
@@ -139,6 +152,7 @@ export default function PersistentDrawerLeft() {
                 </MenuItem>
               ))}
             </Menu>
+            */}
           </Box>
           {/*유저메뉴 끝*/}
           

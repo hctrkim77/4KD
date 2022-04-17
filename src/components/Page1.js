@@ -1,6 +1,8 @@
 import * as React from 'react';
 import { DataGrid } from '@mui/x-data-grid';
 import { useDemoData } from '@mui/x-data-grid-generator';
+import { useMediaQuery } from "@material-ui/core";
+import { makeStyles } from '@material-ui/core/styles';
 
 const PAGE_SIZE = 5;
 
@@ -22,6 +24,7 @@ export default function CursorPaginationGrid() {
     rowLength: 100,
     maxColumns: 6,
   });
+
 
   const pagesNextCursor = React.useRef({});
 
@@ -75,7 +78,7 @@ export default function CursorPaginationGrid() {
         pageSize={5}
         rowsPerPageOptions={[5]}
         rowCount={100}
-        /*paginationMode="server"*/
+        paginationMode="server"
         onPageChange={handlePageChange}
         page={page}
         loading={loading}
