@@ -70,18 +70,19 @@ export default function CursorPaginationGrid() {
   }, [page, data]);
 
   return (
-    <div style={{ height: 400, width: '100%' }}>
+    <div style={{ height: 800, width: '100%', margin: '30px auto', maxWidth: 800 }}>
       <DataGrid
         rows={rows}
         columns={data.columns}
         pagination
         pageSize={5}
-        rowsPerPageOptions={[5]}
+        rowsPerPageOptions={[20]}
         rowCount={100}
         paginationMode="server"
         onPageChange={handlePageChange}
         page={page}
         loading={loading}
+        maxWidth="800"
       />
     </div>
   );
